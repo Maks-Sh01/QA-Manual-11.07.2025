@@ -1,4 +1,3 @@
-// Перевірка при завантаженні сторінки
 window.onload = function () {
   const currentUser = localStorage.getItem('currentUser');
   const message = document.getElementById('message');
@@ -22,7 +21,7 @@ function login() {
   if (storedPassword === password) {
     localStorage.setItem('currentUser', username);
     message.style.color = 'green';
-    message.innerText = `Привіт, ${username}! Авторизація успішна.`;
+    message.innerText = `Привіт, ${username}!`;
     document.getElementById('logoutBtn').style.display = 'block';
     document.getElementById('loginForm').style.display = 'none';
   } else {
@@ -33,5 +32,5 @@ function login() {
 
 function logout() {
   localStorage.removeItem('currentUser');
-  location.reload(); // Перезавантажити сторінку
+  location.reload();
 }
