@@ -56,7 +56,7 @@ function login() {
   if (storedPassword === password) {
     localStorage.setItem('currentUser', username);
     message.style.color = 'green';
-    message.innerText = `Привіт, ${username}! Авторизація успішна.`;
+    message.innerText = `Привіт, ${username}!`;
     document.getElementById('logoutBtn').style.display = 'block';
     document.getElementById('loginForm').style.display = 'none';
   } else {
