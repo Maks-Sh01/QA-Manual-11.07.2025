@@ -13,8 +13,6 @@
 						   <li><a href="../index.html">About</a></li>
                 <li><a href="contacts.html">Contacts</a></li>
                 <li><a href="reg.html">Registration</a></li>
-                <li><a href="login.html">Login</a></li>
-
 
 					</ul>
 					</div>
@@ -24,31 +22,27 @@
 <body>
            
 <body>
-        <h1 class="TitlePage">Gallery</h1>
+        <h1 class="TitlePage">LOGIN</h1>
  <main>
-<div class="gallery">
-    <div class="gallery-item">
-      <img src="../photos/Maksym_Shatalov.jpg" alt="Maksym_Shatalov">
-      <div class="caption">Я</div>
-    </div>
-    <div class="gallery-item">
-      <img src="../photos/me_2.jpg" alt="Maksym_Shatalov">
-      <div class="caption">Теж я</div>
-    </div>
-    <div class="gallery-item">
-      <img src="../photos/my_cat.jpg" alt="Моя киця">
-      <div class="caption">Моя киця - Федір</div>
-    </div>
-
-    
-  </div>
-
 
 
 
 
   
+<div id="loginForm">
+      <input type="text" id="loginUsername" placeholder="Ім'я користувача">
+      <input type="password" id="loginPassword" placeholder="Пароль">
+      <button onclick="login()">Увійти</button>
+      <a href="register.html">Немає акаунта? Зареєструйтесь</a>
+    </div>
 
+    <p id="message"></p>
+    <button id="logoutBtn" onclick="logout()" style="display: none;">Вийти</button>
+  </div>
+
+	<script src="js/index.js"></script>
+	<script src="js/save_user.js"></script>
+	<script src="js/logout.js"></script>
 
 
 
@@ -59,6 +53,5 @@
 
  </main>
    <div class="footer"> ©2025 Всі права захищені</div>
-	<script src="js/index.js"></script>
   </body>
 </html>
