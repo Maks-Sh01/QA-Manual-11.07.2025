@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "6ad33af3-0372-47bd-b90d-0f4448ef45f2",
+		"name": "ParaBank Full API Collection (with customerId variable)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48750186",
+		"_collection_link": "https://maxshatalov77-3222951.postman.co/workspace/Maksim-Shatalov's-Workspace~167a3929-9380-4576-8e49-774e35d7bf5b/collection/48750186-6ad33af3-0372-47bd-b90d-0f4448ef45f2?action=share&source=collection_link&creator=48750186"
+	},
+	"item": [
+		{
+			"name": "Login (Get customerId)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set('customerId', pm.response.text());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/services/bank/login/john/demo",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"services",
+						"bank",
+						"login",
+						"john",
+						"demo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Accounts for Logged User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/services/bank/customers/{{customerId}}/accounts",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"services",
+						"bank",
+						"customers",
+						"{{customerId}}",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Account Balance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://parabank.parasoft.com/parabank/services/bank/accounts/{{accountId}}",
+					"protocol": "https",
+					"host": [
+						"parabank",
+						"parasoft",
+						"com"
+					],
+					"path": [
+						"parabank",
+						"services",
+						"bank",
+						"accounts",
+						"{{accountId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
